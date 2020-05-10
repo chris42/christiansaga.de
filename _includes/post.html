@@ -1,0 +1,113 @@
+<article>
+
+  <div class="page-header">
+    <h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
+  </div>
+
+
+  <span class="post-date">
+    {% assign d = page.date | date: "%d" | plus:'0' %}
+    {{ page.date | date: "%B" }}
+    {% case d %}
+    {% when 1 or 21 or 31 %}{{ d }}st,
+    {% when 2 or 22 %}{{ d }}nd,
+    {% when 3 or 23 %}{{ d }}rd,
+    {% else %}{{ d }}th,
+    {% endcase %}
+    {{ page.date | date: "%Y" }}
+  </span>
+  <div class="article_body">
+    {{ content }}
+  </div>
+
+  {% unless page.categories == empty %}
+  <ul class="tag_box list-unstyled list-inline">
+    <li class="list-inline-item"><i class="fa fa-folder-open"></i></li>
+    {% assign categories_list = page.categories %}
+    {% if categories_list.first[0] == null %}
+    {% for category in categories_list %}
+    <li class="list-inline-item">
+      <a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category }}-ref">{{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>{% unless forloop.last %},{% endunless %}</a>
+    </li>
+    {% endfor %}
+    {% else %}
+    {% for category in categories_list %}
+    <li class="list-inline-item">
+      <a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] }}-ref"> {{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span></a>
+    </li>
+    {% endfor %}
+    {% endif %}
+  </ul>
+  {% endunless %}
+
+  {% unless page.tags == empty %}
+  <ul class="list-inline">
+    <li class="list-inline-item"><i class="fa fa-tags"></i></li>
+    {% assign tags_list = page.tags %}
+    {% if tags_list.first[0] == null %}
+    {% for tag in tags_list %}
+    <li class="list-inline-item">
+      <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}-ref">{{ tag }} <span>({{ site.tags[tag].size }})</span>{% unless forloop.last %},{% endunless %}</a>
+    </li>
+    {% endfor %}
+    {% else %}
+    {% for tag in tags_list %}
+    <li class="list-inline-item">
+      <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span>({{ tag[1].size }})</span>{% unless forloop.last %},{% endunless %}</a>
+    </li>
+
+    {% endfor %}
+    {% endif %}
+    {% assign tags_list = nil %}
+  </ul>
+  {% endunless %}
+
+  <hr class="my-5">
+
+  <div class="my-5">
+    <section class="share col-sm-6">
+      <h4 class="section-title">Share Post</h4>
+      <a class="btn btn-outline-secondary btn-sm twitter" href="http://twitter.com/share?text={{page.title | encode}}{% if site.author.twitter%}&amp;via={{site.author.twitter}}{% endif %}&amp;url={{ site.url }}{{ page.url }}" target="_blank">
+        <i class="fab fa-twitter fa-lg"></i>
+        Twitter
+      </a>
+      <a class="btn btn-outline-secondary btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank">
+        <i class="fab fa-facebook fa-lg"></i>
+        Facebook
+      </a>
+      <a class="btn btn-outline-secondary btn-sm linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{page.title | encode}}" target="_blank">
+        <i class="fab fa-linkedin fa-lg"></i>
+        LinkedIn
+      </a>
+      <a class="btn btn-outline-secondary btn-sm reddit" href="https://www.reddit.com/submit?url={{ site.url }}{{ page.url }}&amp;title={{page.title | encode}}" target="_blank">
+        <i class="fab fa-reddit fa-lg"></i>
+        Reddit
+      </a>
+    </section>
+
+    <section class="col-sm-6 author">
+      <img src="{{ site.BASE_PATH }}/assets/media/logo.png" class="img-rounded author-image" />
+      <h4 class="section-title author-name">{{page.author.name}}</h4>
+      <p class="author-bio">Author</p>
+    </section>
+    <div class="clearfix"></div>
+  </div>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      {% if page.previous %}
+      <li class="page-item previous"><a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}" class="page-link">&larr; Older Article</a></li>
+      {% else %}
+      <li class="page-item previous disabled"><a class="page-link">No Previous Article</a></li>
+      {% endif %}
+      {% if page.next %}
+      <li class="page-item next"><a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}" class="page-link">Newer Article &rarr;</a></li>
+      {% else %}
+      <li class="page-item next disabled"><a class="page-link">No Newer Article</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  {% include comments.html %}
+  <div class="clearfix"></div>
+</article>

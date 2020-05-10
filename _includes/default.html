@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{ page.title }}</title>
+	{% if page.description %}
+	<meta name="description" content="{{ page.description }}">
+	{% endif %}
+	<meta name="author" content="{{ site.author.name }}">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le styles -->
+	<link rel="icon" type="image/png" href="{{ site.BASE_PATH }}/assets/ico/favicon.png">
+	<link rel="shortcut icon" href="{{ site.BASE_PATH }}/assets/ico/favicon.png">
+	<link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css?v=2020-02" rel="stylesheet">
+	<link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/all.css" rel="stylesheet">
+	<link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="{{ site.BASE_PATH }}/assets/css/style.css?x={{ "now" | date: "%Y-%m-%d-%H-%M" }}" rel="stylesheet">
+
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/jquery/jquery.min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
+</head>
+
+<body>
+
+
+	<nav id="leftnav" class="navbar navbar-expand-lg fixed-top">
+		{% include sidebar.html %}
+	</nav>
+
+	<div id="maincontent" class="p-0">
+		<div class="">
+
+			{{ content }}
+
+			<footer>
+				<hr/>
+				<p>
+					Copyright &copy; 2025-{{ site.time | date: '%Y' }}  <a href="/">{{ site.author.name }}</a>. Powered by <a href="http://jekyllrb.com/">Jekyll</a>.
+					<br/>
+					This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+				</p>
+			</footer>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/app.js"></script>
+</body>
+</html>

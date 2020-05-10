@@ -1,0 +1,89 @@
+<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="{{ site.BASE_PATH }}/">
+		<img src="{{ site.BASE_PATH }}/assets/media/logo.png" class="img-circle" />
+	</a>
+	<span class="title">
+		<a href="{{ site.BASE_PATH }}/">{{ site.title }}</a>
+	</span>
+</header>
+
+{% if site.author.bio %}
+<div id="bio" class="text-center">
+	{{ site.author.bio }}
+</div>
+{% endif %}
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		{% if site.author.github %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="https://github.com/{{ site.author.github }}" rel="me"><i class="fab fa-github-alt fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.author.twitter %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="https://twitter.com/{{ site.author.twitter }}" rel="me"><i class="fab fa-twitter fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.author.mastodon %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="{{ site.author.mastodon }}" rel="me"><i class="fab fa-mastodon fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.author.email %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="mailto:{{ site.author.email }}" rel="me"><i class="fab fa-envelope fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.author.pinterest %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="https://pinterest.com/{{ site.author.pinterest }}"><i class="fab fa-pinterest fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.author.linkedin %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="https://linkedin.com/in/{{ site.author.linkedin }}" rel="me"><i class="fab fa-linkedin fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.about_path %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}/{{ site.about_path }}" title="About this page"><i class="far fa-question-circle fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.contact_path %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}/{{ site.contact_path }}" title="Contact me"><i class="far fa-paper-plane fa-lg"></i></a>
+		</li>
+		{% endif %}
+		{% if site.rss_path %}
+		<li class="list-inline-item">
+			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}/{{ site.rss_path }}"><i class="fas fa-rss fa-lg"></i></a>
+		</li>
+		{% endif %}
+	</ul>
+</div>
+
+<!-- deactivated sidebar navigation -->
+<!--<button type="button" class="btn navbar-toggler" data-toggle="collapse" data-target="#pages-list" aria-controls="pages-list" aria-expanded="false" aria-label="Toggle navigation">
+	<i class="fas fa-bars"></i>
+</button>
+<div id="pages-list" class="collapse navbar-collapse">
+	<ul class="list-unstyled">
+		<li {% if page.url == "/" %}class="active"{% endif %}><a class="collink" href="{{ site.BASE_PATH }}/">Home</a></li>
+		<li><a class="collink" href="{{ site.BASE_PATH}}/{{ site.categories_path }}">Categories</a></li>
+		<li><a class="collink" href="{{ site.BASE_PATH}}/{{ site.tags_path }}">Tags</a></li>
+	</ul>
+	<div class="clearfix"></div>
+</div>-->
+
+<!-- deactivated search box. Maybe activate and rewrite with lunr.js
+<div id="srchbox" class="text-center">
+	<form class="srchfrm" action="{{ site.BASE_PATH }}/search" method="get">
+		<input name="q" value="" type="text" placeholder="search {{ site.title }}" class="srchfld form-control" />
+		<button id="srchbtn" type="submit" class="btn btn-default btn-sm btn-dark"><i class="fa fa-search"></i> Search</button>
+		<small>You will be redirected to <a class="collink" href="https://duckduckgo.com/">DuckDuckGo</a>.</small>
+	</form>
+</div>-->
+
+<!-- sidebar.html end -->
