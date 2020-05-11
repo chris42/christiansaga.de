@@ -2,7 +2,8 @@
 
 paginate: 5 # pagination based on number of posts
 paginate_path: "page:num"
-exclude: ["README.md"] # files to exclude
+exclude: ["README.md", "staticman.yml"] # files to exclude
+include: [".well-known"]
 plugins: ["jekyll-paginate"]
 highlighter: rouge
 markdown: kramdown
