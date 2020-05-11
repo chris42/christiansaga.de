@@ -1,0 +1,36 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 5 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+plugins: ["jekyll-paginate"]
+highlighter: rouge
+markdown: kramdown
+#permalink: /:year/:month/:day/:title/
+url: https://www.christiansaga.de
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: christiansaga.de
+
+title: christiansaga.de
+description: Personal website
+author:
+  name: Christian
+  email:
+  github:
+  twitter:
+  mastodon:
+  linkedin:
+  bio: Personal website
+
+# Make sure you create the following in /pages when set
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+about_path: about.html
+#contact_path: contact.html
+
+BASE_PATH:
