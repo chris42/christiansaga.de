@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Open Source Wifi Speaker based on IKEA Symfonisk – Part II: Software / OS'
+title: 'Open Source Wifi Speaker based on IKEA Symfonisk - Part II: Software / OS'
 date: 2020-02-11 15:28:17 +01:00
 categories: DIY
 tags: [Linux, ALSA, crossover, DIY, equalizer, Hifiberry, piCorePlayer-v5.0.0, Raspberry Pi, Sonos, Symfonisk, Wifi]
