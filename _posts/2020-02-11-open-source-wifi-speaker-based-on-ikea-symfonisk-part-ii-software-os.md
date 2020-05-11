@@ -37,7 +37,7 @@ So now we only need to extend the piCorePlayer with specialties of our setup:
 ### Step 1: Prepare Richard Taylor's LADSPA plugins
 As tinycore is loading everything into RAM on boot, the system is build out of different extensions, which are pretty much zips with the files for that extension. All loaded extensions get merged into one filesystem in RAM on which the system is running. Most things are already prepackaged and can be downloaded as an extension, however within the repositories, I could not find the LADSPA plugins of Richard as a prepared extension. However creating such extension is not too complicated.
 
-[Download Plugins]({{ site.baseurl }}/assets/download/rt-plugins-0.0.6.zip)
+[Download Plugins]({{ site.baseurl }}/assets/download/rt-plugins-0.0.6.zip) (Author published source code under [GPL-v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html))
 
 If you want to compile the plugins yourself, it makes it easier to use a piCore setup on the Raspberry.
 
