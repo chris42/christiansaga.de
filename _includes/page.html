@@ -11,7 +11,7 @@
   <hr class="my-5">
 
   <section class="share col-sm-6">
-    <h4 class="section-title">Share Post</h4>
+    <h4 class="section-title">Share Page</h4>
     <a class="btn btn-outline-secondary btn-sm twitter" href="http://twitter.com/share?text={{page.title | encode}}{% if site.author.twitter%}&amp;via={{site.author.twitter}}{% endif %}&amp;url={{ site.url }}{{ page.url }}" target="_blank">
       <i class="fab fa-twitter fa-lg"></i>
       Twitter
@@ -30,11 +30,13 @@
     </a>
   </section>
 
+  {% if page.author.name %}
   <section class="col-sm-6 author">
     <img src="{{ site.BASE_PATH }}/assets/media/logo.png" class="img-rounded author-image" />
     <h4 class="section-title author-name">{{page.author.name}}</h4>
     <p class="author-bio">Author</p>
   </section>
+  {% endif %}
 
   {% include comments.html %}
   <div class="clearfix"></div>
