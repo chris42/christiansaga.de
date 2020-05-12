@@ -2,7 +2,7 @@
 layout: page
 permalink: categories.html
 title: Categories
-header: Posts By Category
+header: Posts by category
 group: navigation
 comments: off
 ---
@@ -12,7 +12,7 @@ comments: off
       {% assign categories_list = site.categories | sort %}
         {% for category in categories_list %}
             <li>
-                <a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] | replace:' ','-' }}-ref" class="btn m-2">
+                <a href="{{ site.BASE_PATH }}{{ site.categories_path }}#{{ category[0] | replace:' ','-' }}-ref" class="btn m-2">
                     {{ category[0] | capitalize }} <span class="text-muted">{{ category[1].size }}</span>
                 </a>
             </li>

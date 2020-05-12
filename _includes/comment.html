@@ -1,30 +1,26 @@
 
 {% assign comment_id = id | prepend: '-' | url_encode%}
-<div class="comment {% unless include.parent == include.id %}child{% endunless %}" id="comment_{{comment_id}}">
+<div class="comment {% unless include.parent == include.id %}child{% endunless %}" id="comment_{{ comment_id }}">
 
 	<div class="comment_header">
 		<cite>
 			{% if include.url == blank or include.url == "" %}
-			{{include.name}}
+			{{ include.name }}
 			{% else %}
-			<a href="{{include.url}}">{{include.name}}</a>
+			<a href="{{ include.url }}">{{ include.name }}</a>
 			{% endif %}
 		</cite>
 		|
-		<a class="comment_permalink" href="{{site.url}}{{page.url}}#comment_{{comment_id}}" title="Permalink to this comment">Permalink</a>
+		<a class="comment_permalink" href="{{ site.url }}{{ page.url }}#comment_{{ comment_id }}" title="Permalink to this comment">Permalink</a>
 		|
 		<span class="comment_date"><time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date_to_long_string }}</time></span>
 	</div>
 
-
 	<div class="comment_body">
-		{{include.message | markdownify}}
+		{{ include.message | markdownify }}
 	</div>
 
-
 </div>
-
-
 
 {% if include.parent == include.id %}
 {% capture i %}{{ include.id }}{% endcapture %}

@@ -7,7 +7,7 @@ permalink: feed.xml
 	<channel>
 		<title>{{ site.title }}</title>
 		<link>{{ site.url }}{{ site.BASE_PATH }}/</link>
-		<atom:link href="{{ site.url }}{{ site.BASE_PATH }}/{{ site.rss_path }}" rel="self" type="application/rss+xml" />
+		<atom:link href="{{ site.url }}{{ site.BASE_PATH }}{{ site.rss_path }}" rel="self" type="application/rss+xml" />
 		{% for post in site.posts limit:10 %}
 			<item>
 				<title>{{ post.title }}</title>

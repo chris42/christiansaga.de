@@ -21,7 +21,7 @@
 
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/jquery/jquery.min.js"></script>
 
-	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}{{ site.rss_path }}">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
 			<footer>
 				<hr/>
 				<p>
-					Copyright &copy; 2025-{{ site.time | date: '%Y' }} Christian Saga. Powered by <a href="http://jekyllrb.com/">Jekyll</a>. <a href="{{ site.BASE_PATH }}/about.html#privacy-policy">Privacy Policy</a>
+					Copyright &copy; 2015-{{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com/">Jekyll</a>. <a href="{{ site.BASE_PATH }}{{ site.about_path }}#privacy-policy">Privacy Policy</a>
 					<br/>
 					This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 				</p>

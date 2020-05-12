@@ -1,8 +1,6 @@
 <!-- sidebar.html -->
 <header class="sidebar-header" role="banner">
-	<a href="{{ site.BASE_PATH }}/">
-		<img src="{{ site.BASE_PATH }}/assets/media/logo.png" class="img-circle" />
-	</a>
+	<a href="{{ site.BASE_PATH }}/"><img src="{{ site.BASE_PATH }}/assets/media/logo.png" class="img-circle" /></a>
 	<span class="title">
 		<a href="{{ site.BASE_PATH }}/">{{ site.title }}</a>
 	</span>
@@ -14,6 +12,7 @@
 </div>
 {% endif %}
 
+<!-- regular screen sidebar menu -->
 <div id="contact-list" class="text-center">
 	<ul class="list-unstyled list-inline">
 		{% if site.author.github %}
@@ -48,49 +47,91 @@
 		{% endif %}
 		{% if site.about_path %}
 		<li class="list-inline-item">
-			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}/{{ site.about_path }}" title="About this page"><i class="far fa-question-circle fa-lg"></i></a>
+			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}{{ site.about_path }}" title="About this page"><i class="far fa-question-circle fa-lg"></i></a>
 		</li>
 		{% endif %}
 		{% if site.contact_path %}
 		<li class="list-inline-item">
-			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}/{{ site.contact_path }}" title="Contact me"><i class="far fa-paper-plane fa-lg"></i></a>
+			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}{{ site.contact_path }}" title="Contact me"><i class="far fa-paper-plane fa-lg"></i></a>
 		</li>
 		{% endif %}
 		{% if site.rss_path %}
 		<li class="list-inline-item">
-			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}/{{ site.rss_path }}"><i class="fas fa-rss fa-lg"></i></a>
+			<a class="btn btn-dark btn-sm" href="{{ site.BASE_PATH }}{{ site.rss_path }}"><i class="fas fa-rss fa-lg"></i></a>
 		</li>
 		{% endif %}
 	</ul>
 </div>
 
+<!-- small screen menu button -->
 <button type="button" class="btn navbar-toggler" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="fas fa-bars"></i>
+	<i class="fas fa-bars"></i>
 </button>
 
+<!-- small screen menu -->
 <div id="mobile-menu" class="collapse navbar-collapse">
 	<ul class="list-unstyled">
-				{% if site.author.github %}<li><a class="collink" href="https://github.com/{{ site.author.github }}" rel="me">Github</a></li>{% endif %}
-				{% if site.author.twitter %}<li><a class="collink" href="https://twitter.com/{{ site.author.twitter }}" rel="me">Twitter</a></li>{% endif %}
-				{% if site.author.mastodon %}<li><a class="collink" href="{{ site.author.mastodon }}" rel="me">Mastodon</a></li>{% endif %}
-				{% if site.author.email %}<li><a class="collink" href="mailto:{{ site.author.email }}" rel="me">E-Mail</a></li>{% endif %}
-				{% if site.author.pinterest %}<li><a class="collink" href="https://pinterest.com/{{ site.author.pinterest }}" rel="me">Pinterest</a></li>{% endif %}
-				{% if site.author.linkedin %}<li><a class="collink" href="https://linkedin.com/in/{{ site.author.linkedin }}" rel="me">Linkedin</a></li>{% endif %}
-				{% if site.about_path %}<li><a class="collink" href="{{ site.BASE_PATH }}/{{ site.about_path }}">About</a></li>{% endif %}
-				{% if site.contact_path %}<li><a class="collink" href="{{ site.BASE_PATH }}/{{ site.contact_path }}">Contact</a></li>{% endif %}
-				{% if site.rss_path %}<li><a class="collink" href="{{ site.BASE_PATH }}/{{ site.rss_path }}">RSS Feed</a></li>{% endif %}
-				<li><a class="collink" href="{{ site.BASE_PATH}}/{{ site.categories_path }}">Categories</a></li>
-				<li><a class="collink" href="{{ site.BASE_PATH}}/{{ site.tags_path }}">Tags</a></li>
-  </ul>
+		{% if site.author.github %}
+		<li>
+			<a class="collink" href="https://github.com/{{ site.author.github }}" rel="me">Github</a>
+		</li>
+		{% endif %}
+		{% if site.author.twitter %}
+		<li>
+			<a class="collink" href="https://twitter.com/{{ site.author.twitter }}" rel="me">Twitter</a>
+		</li>
+		{% endif %}
+		{% if site.author.mastodon %}
+		<li>
+			<a class="collink" href="{{ site.author.mastodon }}" rel="me">Mastodon</a>
+		</li>
+		{% endif %}
+		{% if site.author.email %}
+		<li>
+			<a class="collink" href="mailto:{{ site.author.email }}" rel="me">E-Mail</a>
+		</li>
+		{% endif %}
+		{% if site.author.pinterest %}
+		<li>
+			<a class="collink" href="https://pinterest.com/{{ site.author.pinterest }}" rel="me">Pinterest</a>
+		</li>
+		{% endif %}
+		{% if site.author.linkedin %}
+		<li>
+			<a class="collink" href="https://linkedin.com/in/{{ site.author.linkedin }}" rel="me">Linkedin</a>
+		</li>
+		{% endif %}
+		{% if site.about_path %}
+		<li>
+			<a class="collink" href="{{ site.BASE_PATH }}{{ site.about_path }}">About</a>
+		</li>
+		{% endif %}
+		{% if site.contact_path %}
+		<li>
+			<a class="collink" href="{{ site.BASE_PATH }}{{ site.contact_path }}">Contact</a>
+		</li>
+		{% endif %}
+		{% if site.rss_path %}
+		<li>
+			<a class="collink" href="{{ site.BASE_PATH }}{{ site.rss_path }}">RSS Feed</a>
+		</li>
+		{% endif %}
+		<li>
+			<a class="collink" href="{{ site.BASE_PATH}}{{ site.categories_path }}">Categories</a>
+		</li>
+		<li>
+			<a class="collink" href="{{ site.BASE_PATH}}{{ site.tags_path }}">Tags</a>
+		</li>
+	</ul>
 </div>
 
 <!-- deactivated search box. Maybe activate and rewrite with lunr.js
 <div id="srchbox" class="text-center">
-	<form class="srchfrm" action="{{ site.BASE_PATH }}/search" method="get">
-		<input name="q" value="" type="text" placeholder="search {{ site.title }}" class="srchfld form-control" />
-		<button id="srchbtn" type="submit" class="btn btn-default btn-sm btn-dark"><i class="fa fa-search"></i> Search</button>
-		<small>You will be redirected to <a class="collink" href="https://duckduckgo.com/">DuckDuckGo</a>.</small>
-	</form>
+<form class="srchfrm" action="{{ site.BASE_PATH }}/search" method="get">
+<input name="q" value="" type="text" placeholder="search {{ site.title }}" class="srchfld form-control" />
+<button id="srchbtn" type="submit" class="btn btn-default btn-sm btn-dark"><i class="fa fa-search"></i> Search</button>
+<small>You will be redirected to <a class="collink" href="https://duckduckgo.com/">DuckDuckGo</a>.</small>
+</form>
 </div>-->
 
 <!-- sidebar.html end -->

@@ -7,8 +7,9 @@ include: [ .well-known ]
 plugins: [ jekyll-paginate ]
 highlighter: rouge
 markdown: kramdown
-#permalink: /:year/:month/:day/:title/
 url: https://www.christiansaga.de
+title: christiansaga.de
+description: Personal website
 defaults:
   -
     scope:
@@ -16,10 +17,8 @@ defaults:
     values:
       title: christiansaga.de
 
-title: christiansaga.de
-description: Personal website
 author:
-  name: Christian
+  name: Christian Saga
   email:
   github:
   twitter:
@@ -28,10 +27,10 @@ author:
   bio: Personal website
 
 # Make sure you create the following in /pages when set
-rss_path: feed.xml
-categories_path: categories.html
-tags_path: tags.html
-about_path: about.html
-#contact_path: contact.html
+rss_path: /feed.xml
+categories_path: /categories.html
+tags_path: /tags.html
+about_path: /about.html
+#contact_path: /contact.html
 
 BASE_PATH:
