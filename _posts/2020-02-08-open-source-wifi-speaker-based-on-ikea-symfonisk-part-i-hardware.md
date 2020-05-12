@@ -101,18 +101,93 @@ On the adapter you can see the lines of the cable in 1-10. With a multimeter you
 
 To pull everything together, I did the following mapping for the buttons and LEDs for the adapter and raspi connection:
 
-| CABLE/ADAPTER | FUNCTION | HW-PIN | GPIO | EXPLANATION |
-|-------|-------|-------|-------|-------|
-| 1 | SW_Mute | 23 | 11 | play/pause button |
-| 2 | SW_Mute | 23 | 11 | just use one |
-| 3 | Green LED | 16 | 23 |   |
-| 4 | Red LED | 18 | 24 |   |
-| 5 | GND | 20 | GND | just use one |
-| 6 | Amber LED | 22 | 25 |   |
-| 7 | GND | 20 | GND | just use one |
-| 8 | White LED | 15 | 22 |   |
-| 9 | SW_UP | 21 | 9 | volume up button |
-| 10 | SW_DW | 19 | 10 | volume down button |
+<div class="table-responsive">
+
+<table>
+  <thead>
+    <tr>
+      <th>CABLE/ADAPTER</th>
+      <th>FUNCTION</th>
+      <th>HW-PIN</th>
+      <th>GPIO</th>
+      <th>EXPLANATION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>SW_Mute</td>
+      <td>23</td>
+      <td>11</td>
+      <td>play/pause button</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>SW_Mute</td>
+      <td>23</td>
+      <td>11</td>
+      <td>just use one</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Green LED</td>
+      <td>16</td>
+      <td>23</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Red LED</td>
+      <td>18</td>
+      <td>24</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>GND</td>
+      <td>20</td>
+      <td>GND</td>
+      <td>just use one</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Amber LED</td>
+      <td>22</td>
+      <td>25</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>GND</td>
+      <td>20</td>
+      <td>GND</td>
+      <td>just use one</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>White LED</td>
+      <td>15</td>
+      <td>22</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>SW_UP</td>
+      <td>21</td>
+      <td>9</td>
+      <td>volume up button</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>SW_DW</td>
+      <td>19</td>
+      <td>10</td>
+      <td>volume down button</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 When you solder everything together you get something like this.
 
