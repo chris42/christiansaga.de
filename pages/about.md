@@ -89,3 +89,4 @@ Please send any question or enquiry to the "webmaster" E-Mail account of this do
 Thanks to
 * Martin Scharm ([binfalse.de](https://binfalse.de)) for letting me use his Jekyll design
 * İsmail Demirbilek ([dbyll Theme](https://github.com/dbtek/dbyll)) as a base theme
+* Michael Rose ([Staticman integration](https://mademistakes.com/articles/improving-jekyll-static-comments/))
