@@ -1,0 +1,8 @@
+_id: migrated_robertmiddleswarth201910112028
+_parent: >-
+  https://www.christiansaga.de/sowhatisthesolution/2018/09/09/dovecot-learn-ham-spam-with-rspamd-via-inet-protocol-for-docker.html
+message: 'I have looked into Mailcow but I use Kubernetes and mailcow is docker-compose dependent and wont run under Kubernetes. I like the idea of breaking them up in to pieces and a good starting point would be nice.'
+name: 'Robert Middleswarth'
+url: ''
+replying_to_uid: 'migrated_robertmiddleswarth201910110754'
+date: '2019-10-11T20:28:0Z'

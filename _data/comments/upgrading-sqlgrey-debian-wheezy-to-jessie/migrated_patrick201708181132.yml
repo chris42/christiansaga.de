@@ -1,0 +1,8 @@
+_id: migrated_patrick201708181132
+_parent: >-
+  https://www.christiansaga.de/sowhatisthesolution/2015/04/27/upgrading-sqlgrey-debian-wheezy-to-jessie.html
+message: Dont forget, like I did, to enable the service! systemctl enable sqlgrey.service
+name: Patrick
+url: ''
+replying_to_uid: ''
+date: '2017-08-18T11:32:0Z'

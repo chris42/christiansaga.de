@@ -1,0 +1,24 @@
+_id: migrated_wirelass202004290805
+_parent: >-
+  https://www.christiansaga.de/diy/2020/02/11/open-source-wifi-speaker-based-on-ikea-symfonisk-part-ii-software-os.html
+message: 'Very nice, congratulations on a great project.
+
+I don’t know if you listened to the ikea symfonisk extensively, before disassembling it?
+Can you compare the sound before and after?
+Do you know if the speaker plays louder now or before?
+
+I think it would be possible to find out the exact crossover points and orders for the speaker in it’s original condition. If someone has the tools to find it (specific sound waves and microphone for testing and measuring speaker response) I leave this suggestion:
+
+* Disassemble the speaker front panel, disconnect the woofer, assemble back and do a frequency analysis to the tweeter. Analyzing the graph, this should give you an estimate of the crossover point, and the slope of the response should be related to the crossover order.
+
+* Then you need to do the same for the mid-woofer, because sometimes the response slope of the crossover might be a different order.
+
+With crossover point known, now you could use the right values on your project.
+
+This is just an idea. People more experienced might want to give their input.
+
+Regards'
+name: wirelass
+url: ''
+replying_to_uid: ''
+date: '2020-04-29T08:05:0Z'

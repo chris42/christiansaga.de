@@ -1,0 +1,15 @@
+_id: migrated_christian201910110951
+_parent: >-
+  https://www.christiansaga.de/sowhatisthesolution/2018/09/09/dovecot-learn-ham-spam-with-rspamd-via-inet-protocol-for-docker.html
+message: 'No, I did not post the dockerfiles. I did not want to give a second tutorial on Thomas setup, but only noted the difficult parts, like getting rspamd to be handled via inet protocol. All other components, like dovecot, etc. were very well doumented already and straight forward.
+
+To push you in the right direction:
+The Dockerfiles itself are very straight forward (if you are interested you can look at the mailcow setup, Thomas linked in its guide as well: [https://github.com/mailcow/mailcow-dockerized](https://github.com/mailcow/mailcow-dockerized))
+To make a docker setup run, you need to switch each component from socket based to inet protocol (e.g. in dovecot.conf each service definition to inet_listener). You can actually start doing this in Thomas non-docker setup and then move everything over (reuse the configuration) when it is working.
+There is also another way, to share the sockets between the docker containers, however depending on your setup you might get into a mess with file permissions.
+
+If you have a specific problem, let me know, I am happy to help.'
+name: 'Christian'
+url: ''
+replying_to_uid: 'migrated_robertmiddleswarth201910110754'
+date: '2019-10-11T09:51:0Z'

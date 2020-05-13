@@ -1,0 +1,11 @@
+_id: migrated_fairmiles201903190952
+_parent: >-
+  https://www.christiansaga.de/sowhatisthesolution/2017/07/02/reinstall-grub-after-bios-update-on-luks-encrypted-system.html
+message: 'Thank you! It worked in Ubuntu. I was not able to boot (not even GRUB) after a failed update (kernel? disk error?). Tried several things (including Boot-repair from a Live CD), but I was not able to get into the crypt…
+
+Just a note: I needed sudo before cryptsetup (and the command about resolv.conf apparently failed pointing to nowhere)
+'
+name: 'FairMiles'
+url: ''
+replying_to_uid: ''
+date: '2019-03-19T09:52:0Z'

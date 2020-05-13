@@ -1,0 +1,8 @@
+_id: migrated_christian201809101002
+_parent: >-
+  https://www.christiansaga.de/sowhatisthesolution/2017/07/02/reinstall-grub-after-bios-update-on-luks-encrypted-system.html
+message: 'I did not find any so far. I can only recommend to do a full backup and especially Backup the LUKS Header of the disk. In worst case you could mount it somewhere else.'
+name: 'Christian'
+url: 'www.christiansaga.de'
+replying_to_uid: 'migrated_danielsokolov201809100909'
+date: '2018-09-10T10:02:0Z'
