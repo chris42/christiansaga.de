@@ -209,7 +209,7 @@ article .share .btn {
 
 /* Page+Post and article settings
    Basically content formatting */
-.page-header {
+.page-header h1 {
   color: #DE7D40;
   text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 }
@@ -240,6 +240,10 @@ article img {
 
 h1,h2,h3,h4,h5,h6 {
   font-family: Alike,Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+}
+
+article.home {
+  padding-left: 0;
 }
 
 article.home h1 a,
@@ -330,25 +334,21 @@ a.link-noborder:hover
   float: left;
 }
 
-.aligncenter
-{
+.aligncenter {
   margin:0 auto 21px auto;
 }
 
-#pagelist ul
-{
+#pagelist ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-#pagelist li
-{
+#pagelist li {
   display: inline;
 }
 
-.download
-{
+.download {
   padding: 6px 9px;
   background: none repeat scroll 0% 0% #E7F7D3;
   border: 1px solid #6C3;
@@ -360,30 +360,49 @@ a.link-noborder:hover
   border: 1px solid #E6DB55;
 }
 
-.comment
-{
+/* Comment settings */
+.comment {
   overflow: hidden;
   margin: 0px 0px 21px;
   background: none repeat scroll 0% 0% #FAFAFA;
   border: 1px solid #EEE;
 }
 
-.comment_header
-{
-  margin: 20px 15px;
+.comment_header {
+  margin: 1em 1em;
   font-size: 12px;
   color: #666;
 }
 
-.comment_body
-{
-  margin: 0px 15px;
+.comment_body {
+  margin: 0em 1em;
   line-height: 1.3em;
   overflow: auto;
 }
 
-.cite
-{
+.comment_form {
+  margin-bottom: 0.5em;
+}
+
+.comment_meta {
+    margin-left: 3em;
+    margin-bottom: 1em;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+}
+
+.comment.child {
+    margin-left: 3em;
+}
+
+.comment_reply-link {
+    color: $grey-color;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+cite {
   font-size: 15px;
   color: #000;
   font-weight:bold;

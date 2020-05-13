@@ -1,0 +1,31 @@
+  <div id="respond" class="comment_form">
+    <form id="comment-form" class="js-form" method="post" action="{{ site.staticman_url }}">
+
+      <div class="form-group">
+        <label for="comment-form-message">
+          <h2>Add Comment</h2><small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#comments" style="display:none;">(cancel reply)</a></small>
+        </label>
+        <textarea class="form-control" name="fields[message]" type="text" id="comment-form-message" rows="6" placeholder="Your comment" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="comment-form-name"><strong>Name</strong></label>
+        <input class="form-control" name="fields[name]" type="text" id="comment-form-name" placeholder="Your name (required)" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="comment-form-url"><strong>Homepage</strong></label>
+        <input class="form-control" name="fields[url]" id="comment-form-url" type="text" placeholder="https://domain.com (optional)">
+      </div>
+
+      <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
+      <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
+      <input type="hidden" id="comment-replying-to-uid" name="fields[replying_to_uid]" value="">
+      <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+      <p><strong>Please Note:</strong> By submitting your comment your browser will send the values of the form fields (and the typical browsing meta data) to the API of <a href="https://staticman.net">Staticman</a>. If you don't want to connect to a third party, you should E-Mail me.</p>
+      <button type="submit" class="btn btn-secondary mt-2" id="comment-form-submit">
+        Send comment
+      </button>
+
+    </form>
+  </div>

@@ -1,76 +1,40 @@
-
+<!-- Check if comments are enabled for this page -->
 {% unless page.comments == "off" or page.comments == false  %}
-<div class="clearfix"></div>
-{% if page.slug %}
-{% assign slug = page.slug %}
-{% else %}
-{% assign slug = page.url  | split: "/" | last" %}
-{% endif %}
-{% if site.data.comments[slug] %}
-
-<div id="comments" class="page__comments js-comments">
-  <h2 class="title">
-    {% if site.data.comments[slug].size <= 1 %}
-    {{ site.data.comments[slug] | size | append: ' comment' }}
-    {% elsif site.data.comments[slug].size > 1 %}
-    {{ site.data.comments[slug] | size | append: ' comments' }}
-    {% endif %}
-  </h2>
-  {% assign comments = site.data.comments[slug] | sort %}
-  {% for comment in comments %}
-  {% if comment[1]._parent %}
-  {% if comment[1]._parent != comment[1]._id %}
-  {% continue %}
-  {% endif %}
-  {% assign parent      = comment[1]._parent %}
+  <div class="clearfix"></div>
+  <!-- Get page slug for sure -->
+  {% if page.slug %}
+  {% assign slug = page.slug %}
   {% else %}
-  {% assign parent      = comment[1]._id %}
+  {% assign slug = page.url  | split: "/" | last" %}
   {% endif %}
-  {% assign id          = comment[1]._id %}
-  {% assign name        = comment[1].name %}
-  {% assign url         = comment[1].link %}
-  {% assign date        = comment[1].date %}
-  {% assign message     = comment[1].message %}
-  {% include comment.html id=id parent=parent avatar=avatar email=email name=name url=url date=date message=message %}
-  {% endfor %}
-</div>
-{% endif %}
-
-<!-- Start comment form -->
-<div id="respond" class="comment__form">
-  <h2 class="title">Leave a comment</h2>
-  {% assign txt1 = 'Comment for article: '| url_encode %}
-  {% assign url = page.url|remove:'index.html'| url_encode %}
-  {% assign txt2 = '\nhaving id: '| url_encode %}
-  {% assign id = slug %}
-  {% assign txt3 = '\n------- PLEASE LEAVE THE ABOVE UNTOUCHED AND WRITE COMMENT BELOW -------\n------- IF YOU WANT ME TO INCLUDE CREDITS ADD YOUR NAME AND MAIL -------\n\n'| url_encode %}
-
-  <form id="comment-form" method="POST" action="https://dev.staticman.net/v3/entry/github/chris42/christiansaga.de/master/comments">
-    <div class="form-group">
-      <label for="comment-form-name"><strong>Name</strong></label>
-      <input type="text" class="form-control" id="comment-form-name" name="fields[name]" required spellcheck="false" placeholder="Your name">
-
-    </div>
-    <div class="form-group">
-      <label for="comment-form-url"><strong>Website (optional)</strong></label>
-      <input type="url" class="form-control" id="comment-form-url" name="fields[link]" placeholder="https://domain.com">
-
-    </div>
-    <div class="form__group">
-      <label for="comment-form-message"><strong>Comment</strong></label>
-      <textarea type="text" class="form-control" rows="6" id="comment-form-message" name="fields[message]" required spellcheck="true" placeholder="Your message"></textarea>
-
-    </div>
-    <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}#comments">
-    <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}#comments">
-    <input type="hidden" id="comment-replying-to" name="options[parent]" value>
-    <input type="hidden" id="comment-post-id" name="options[slug]" value="{{ page.slug }}">
-    <p><strong>Please Note:</strong> By submitting your comment your browser will send the values of the form fields (and the typical browsing meta data) to the API of <a href="https://staticman.net">Staticman</a>. If you don't want to connect to a third party, you should E-Mail me.</p>
-    <button type="submit" id="send-comment" class="btn btn-secondary mt-2">Send comment</button>
-  </form>
-  <div class="hidden js-notice notice">
-    <p class="js-notice-text"></p>
+  {% if site.data.comments[slug] %}
+  <!-- If there are comments, list existing comments -->
+  <div id="comments" class="page_comments">
+    <!-- Single vs. multiple comments for title -->
+    <h2 class="title">
+      {% if site.data.comments[slug].size <= 1 %}
+      {{ site.data.comments[slug] | size | append: ' comment' }}
+      {% elsif site.data.comments[slug].size > 1 %}
+      {{ site.data.comments[slug] | size | append: ' comments' }}
+      {% endif %}
+    </h2>
+    <!-- Actual comments -->
+    {% assign comments = site.data.comments[slug] | where_exp: "item", "item.replying_to_uid == ''" %}
+    {% assign comments_by_date = comments | sort: 'date' | reverse %}
+    <!-- List main comments in reverse date order, newest first. List replies in date order, oldest first. -->
+    {% for comment in comments_by_date %}
+    {%- assign name            = comment.name %}
+    {%- assign url             = comment.url %}
+    {%- assign date            = comment.date %}
+    {%- assign message         = comment.message %}
+    {%- assign uid             = comment._id %}
+    {% include comment.html is_reply=false uid=uid replying_to=0 name=name url=url date=date message=message uid=uid %}
+    {% endfor %}
   </div>
-</div>
+  {% endif %}
 
+  <!-- Comment form -->
+  {% include comment_form.html %}
 {% endunless %}
+
+<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/staticman.js"></script>

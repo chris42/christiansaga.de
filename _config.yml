@@ -9,7 +9,7 @@ highlighter: rouge
 markdown: kramdown
 url: https://www.christiansaga.de
 title: christiansaga.de
-description: Personal website
+description: ...a personal website
 defaults:
   -
     scope:
@@ -24,7 +24,7 @@ author:
   twitter:
   mastodon:
   linkedin:
-  bio: Personal website
+  bio: ...a personal website
 
 # Make sure you create the following in /pages when set
 rss_path: /feed.xml
@@ -32,5 +32,8 @@ categories_path: /categories.html
 tags_path: /tags.html
 about_path: /about.html
 #contact_path: /contact.html
+
+# staticman
+staticman_url: https://dev.staticman.net/v3/entry/github/chris42/christiansaga.de/master/comments
 
 BASE_PATH:

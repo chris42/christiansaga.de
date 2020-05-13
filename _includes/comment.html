@@ -1,41 +1,44 @@
 
-{% assign comment_id = id | prepend: '-' | url_encode%}
-<div class="comment {% unless include.parent == include.id %}child{% endunless %}" id="comment_{{ comment_id }}">
+{%- capture article_class %}js-comment comment{% if include.name == site.author.name %} admin{% endif %}{% if include.is_reply %} child{% endif %}{% endcapture %}
+{% assign comment_id = include.uid | prepend: 'comment-' %}
+<div id="{{ comment_id }}" class="{{ article_class }}" uid="{{ include.uid }}">
 
-	<div class="comment_header">
+  <div class="comment_header">
 		<cite>
-			{% if include.url == blank or include.url == "" %}
-			{{ include.name }}
-			{% else %}
-			<a href="{{ include.url }}">{{ include.name }}</a>
-			{% endif %}
-		</cite>
-		|
-		<a class="comment_permalink" href="{{ site.url }}{{ page.url }}#comment_{{ comment_id }}" title="Permalink to this comment">Permalink</a>
-		|
-		<span class="comment_date"><time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date_to_long_string }}</time></span>
-	</div>
+      <a href="{{ include.url }}" title="Users homepage">
+        {{ include.name }}
+      </a>
+		</cite> -
+    <span>
+      <a href="#{{ comment_id }}" title="Permalink to this comment">
+        {{- include.date | date:"%B %eth, %Y %H:%M" -}}
+      </a>
+    </span>
+  </div>
 
-	<div class="comment_body">
-		{{ include.message | markdownify }}
-	</div>
+  <div class="comment_body">
+    {{ include.message  | markdownify }}
+  </div>
 
+	{% if include.is_reply %}
+</div>
+  {% else %}
+  <div class="comment_meta">
+    <a rel="nofollow" class="comment_reply-link" onclick="return addComment.moveForm('{{ comment_id }}', 'respond', '{{ page.slug }}', '{{ include.uid }}')">↪&#xFE0E; Reply to {{ include.name }}</a>
+  </div>
 </div>
 
-{% if include.parent == include.id %}
-{% capture i %}{{ include.id }}{% endcapture %}
-{% assign replies = site.data.comments[slug] | sort | where_exp: 'comment', 'comment[1]._id != i' | where_exp: 'comment', 'comment[1]._parent == i' %}
-{% for reply in replies %}
-{% assign id          = reply[1]._id %}
-{% if reply[1]._parent %}
-{% assign parent      = reply[1]._parent %}
-{% else %}
-{% assign parent      = reply[1]._id %}
-{% endif %}
-{% assign name        = reply[1].name %}
-{% assign url         = reply[1].url %}
-{% assign date        = reply[1].date %}
-{% assign message     = reply[1].message %}
-{% include comment.html id=id parent=parent avatar=avatar email=email name=name url=url date=date message=message %}
-{% endfor %}
+  {%- capture this_uid %}{{ include.uid }}{% endcapture %}
+  {%- assign replies = site.data.comments[page.slug] | where_exp: 'item', 'item.replying_to_uid == this_uid' %}
+  {%- assign replies_date = replies | sort: 'date' %}
+  {% for reply in replies_date %}
+    {%- assign name        = reply.name -%}
+    {%- assign url         = reply.url -%}
+    {%- assign date        = reply.date -%}
+    {%- assign message     = reply.message -%}
+    {%- assign uid         = reply._id -%}
+    {% include comment.html is_reply=true uid=uid name=name url=url date=date message=message %}
+  {% endfor %}
+
+  <hr style="border-top: 1px solid #ccc; background: transparent; margin-bottom: 10px;">
 {% endif %}
