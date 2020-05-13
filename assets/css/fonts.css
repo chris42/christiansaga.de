@@ -8,5 +8,5 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(fonts/Open_Sans/OpenSans-Regular.woff) format('twoff');
+  src: local('Open Sans'), local('OpenSans'), url(fonts/OpenSans/OpenSans-Regular.ttf) format('truetype');
 }
