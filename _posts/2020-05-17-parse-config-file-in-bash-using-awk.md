@@ -35,9 +35,8 @@ Using the delimiter ```=``` this would look like the following for the left side
 awk -F'[=]' '{gsub("^\\s+|\\s+$", "", $1); print $1}' <<< $line
 ```
 So what does this do?
-* ```-F[=]``` basically sets the delimiter to ```=```
-* ```gsub("^\\s+|\\s+$", "", $1);``` starting starting from the first letter (```^```) replace 1 or more spaces at beginning and end (```\\s+|\\s+$```) with an empty string (```""```).
-* ```$1``` use the left part of the delimiter for the gsub command
+* ```-F[=]``` sets the delimiter to ```=```
+* ```gsub("^\\s+|\\s+$", "", $1);``` starting starting from the first letter (```^```) replace 1 or more spaces at beginning and end (```\\s+|\\s+$```) with an empty string (```""```). ```$1``` use the left part of the delimiter for the gsub command
 * ```print $1``` as ```awk``` automatically splits with the delimiter, print the first part (left side of the config line)
 * ```<<< $line``` is the feeded line of our config. Within bash you can easily loop through a file line by line with the ```read``` command.
 
