@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: robots.txt
+sitemap:
+  exclude: true
+---
+User-agent: *
+Disallow: /assets/download/
+Disallow: /assets/media/
+Disallow: /404.html
+Disallow: /about.html
+Sitemap: https://www.christiansaga.de/sitemap.xml
