@@ -9,6 +9,8 @@ fullview: true
 author:
   name: Christian
   email: webmaster@christiansaga.de
+sitemap:
+  priority: 0.7
 ---
 
 For years I had Sonos speakers back at home to play my music and stream internet radio, spotify, etc.

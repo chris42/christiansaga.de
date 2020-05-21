@@ -9,6 +9,8 @@ fullview: true
 author:
   name: Christian
   email: webmaster@christiansaga.de
+sitemap:
+  priority: 0.7
 ---
 
 Due to reasons unknown I upgraded my Lenovos BIOS via a USB Stick. :-) Everything went well, however after reboot, all my boot options for Linux Mint were gone.

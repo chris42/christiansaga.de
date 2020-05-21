@@ -9,6 +9,8 @@ fullview: true
 author:
   name: Christian
   email: webmaster@christiansaga.de
+sitemap:
+  priority: 0.7
 ---
 
 After finishing the [hardware in part I of this little tutorial](/diy/2020/02/08/open-source-wifi-speaker-based-on-ikea-symfonisk-part-i-hardware.html), we need to set up the operating system to run our speakers. Of course it should be open source software.

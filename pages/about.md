@@ -7,6 +7,8 @@ author:
   name: Christian
   email: webmaster@christiansaga.de
 comments: off
+sitemap:
+  exclude: 'yes'
 ---
 
 This page was originally created on my journey towards Linux. Being a long time Windows user (and being thoroughly annoyed by app stores and forced service registrations) I decided with the *- then -* upcoming Windows 8 to try something new.
