@@ -11,7 +11,7 @@ author:
   email: webmaster@christiansaga.de
 ---
 
-Ever so often I get to some osrt of complex bash script and find, that a configuration or ini file would make sense, to control the script an make it more flexible. However bash does not bring nice libraries to parse config files, e.g. like python.
+Ever so often I get to some sort of complex bash script and find, that a configuration or ini file would make sense, to control the script an make it more flexible. However bash does not bring nice libraries to parse config files, e.g. like python.
 
 In essence two things are needed to write a config file parser:
 1. good trim of the config option, as you can have
