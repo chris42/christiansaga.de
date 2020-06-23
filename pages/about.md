@@ -50,7 +50,7 @@ All information in the Service is provided "as is", with no guarantee of complet
 ### Privacy policy
 I am committed to safeguarding the privacy of my website visitors. I may collect, store and use the following kinds of personal information:
 
-* Information about your visits to and use of this website, including referral source and website navigation
+* Information about your visits to and use of this website, including referral source and website navigation. Webserver logs get purged every 8 weeks, statistics are only gathered anonymized.
 * Information that you provide to me for the purpose of interacting with me, e.g. your name, website and email address in comments
 * Any other information that you choose to send to me
 
