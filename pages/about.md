@@ -15,7 +15,7 @@ This page was originally created on my journey towards Linux. Being a long time 
 
 I went and tried Linux. First moved my laptop to Linux Mint, then created my own server based on Debian. So far so good. I was impressed on how flawless the transition worked. Sometimes I was even frustrated, that I did only use my Laptop and have no opportunity to repair or tinker with it.
 
-However of course there where some issues. Under [**SoWhatIsTheSolution**]({{ site.categories_path }}#SoWhatIsTheSolution-ref) I gather all sorts of problems I encountered. For some this might be trivial stuff, but hey...
+However of course there were some issues. Under [**SoWhatIsTheSolution**]({{ site.categories_path }}#SoWhatIsTheSolution-ref) I gather all sorts of problems I encountered. For some this might be trivial stuff, but hey...
 
 With the [**DIY**]({{ site.categories_path }}#DIY-ref) parts I summarize projects that I think could be interesting or helpful to others.
 
